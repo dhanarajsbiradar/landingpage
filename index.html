@@ -2,138 +2,216 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
-    <title>My App Landing Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <title>Friendship App Landing Page</title>
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .navbar-nav {
+            margin-left: 20px;
+        }
+
+        .nav-item {
+            padding-right: 15px;
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #e67e22 !important;
+        }
+
+        .navbar-form {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
         .jumbotron {
-            background-image: url('jambotronimage.jpg');
-            background-size: cover;
-            margin: 50px 10px 10px 10px;
-            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('card3.jpg') center center/cover no-repeat;
+            margin-top: 56px;
+            padding: 100px 30px;
             color: white;
-        }
-        
-        .container {
             text-align: center;
         }
-        
-        .card-deck {
-            padding-top: 20px;
-            margin-left: 180px;
+
+        .jumbotron h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            opacity: 0.9;
         }
-        
+
+        .jumbotron p.lead {
+            font-size: 1.25rem;
+            opacity: 0.85;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .card-deck-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card-deck {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .card-deck .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .card-deck .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
         #footer {
             margin-top: 50px;
-            padding: 20px 0;
-            background-color: greenyellow;
-        }
-        
-        #appicon {
-            width: 200px;
-        }
-        
-        li :hover {
-            transform: translateY(-3px);
-            cursor: pointer;
-        }
-        
-        marquee {
+            padding: 40px 0;
+            background: linear-gradient(to right, #4caf50, #81c784);
+            color: white;
             text-align: center;
+        }
+
+        #appicon {
+            width: 160px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .card-deck {
+                flex-direction: column;
+            }
+
+            .navbar-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-item {
+                padding-right: 0;
+            }
         }
     </style>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="150">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="#jumbotron">My App</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <a class="navbar-brand d-flex align-items-center" href="#jumbotron">
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Friends Logo"> My App
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#jumbotron">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#footer">Download My App</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="email" placeholder="Email" aria-label="Email">
-                    <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password">
-                    <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
-                </form>
-            </div>
-        </nav>
-    </header>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav align-items-lg-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#jumbotron">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">Download</a>
+                </li>
+            </ul>
+            <form class="form-inline ml-lg-auto navbar-form">
+                <input class="form-control mr-sm-2" type="email" placeholder="Email" aria-label="Email">
+                <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password">
+                <button class="btn btn-success" type="submit">Login</button>
+            </form>
+        </div>
+    </nav>
 
     <main>
         <div class="jumbotron" id="jumbotron">
-            <h1 class="display-4">
-                <marquee behavior="" direction="down">Together is a wonderful place to be.</marquee>
-            </h1>
-            <p class="lead">Good friends are like stars — you don't always see them, but you know they're always there. They lift you up, stand by you, and make every moment brighter.</p>
+            <h1 class="display-4">Friendship is life's greatest gift.</h1>
+            <p class="lead">True friends lift you higher, make you smile brighter, and love you just the way you are.
+            </p>
             <hr class="my-4">
-            <p>Explore features, read about us, and download the app below.</p>
-            <a class="btn btn-primary btn-lg" href="#about" role="button">Learn more</a>
+            <p>Discover features that celebrate your friendships.</p>
+            <a class="btn btn-outline-light btn-lg" href="#" target="_blank" role="button">Celebrate Friendship</a>
         </div>
 
         <div class="container">
-            <h1>Why This App is Awesome!</h1>
-            <p>This app is user-friendly, powerful, and built with the latest technologies to enhance your experience.</p>
+            <h2 class="section-title">Why Friendship Matters</h2>
+            <p class="text-center">Our app is built to cherish bonds, share moments, and bring friends closer than ever
+                before.
+            </p>
         </div>
 
-        <div class="card-deck container" id="about">
-            <div class="card">
-                <img src="cards.jpg" class="card-img-top" alt="Feature 1">
-                <div class="card-body">
-                    <h5 class="card-title">Feature 1</h5>
-                    <p class="card-text">A great feature that helps you do amazing things efficiently.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="container card-deck-wrapper my-5" id="about">
+            <div class="card-deck">
+                <div class="card">
+                    <img src="card1.jpg" class="card-img-top" alt="Happiness Together">
+                    <div class="card-body">
+                        <h5 class="card-title">Laugh Together</h5>
+                        <p class="card-text">Every friendship is a story written with smiles, memories, and endless
+                            laughter.
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="cards.jpg" class="card-img-top" alt="Feature 2">
-                <div class="card-body">
-                    <h5 class="card-title">Feature 2</h5>
-                    <p class="card-text">Another helpful functionality to make your life easier.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <div class="card">
+                    <img src="card2.jpg" class="card-img-top" alt="Supportive Friends">
+                    <div class="card-body">
+                        <h5 class="card-title">Support Each Other</h5>
+                        <p class="card-text">True friends stand by you through thick and thin with love and loyalty.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="cards.jpg" class="card-img-top" alt="Feature 3">
-                <div class="card-body">
-                    <h5 class="card-title">Feature 3</h5>
-                    <p class="card-text">Explore even more benefits with this extended feature set.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <div class="card">
+                    <img src="card3.jpg" class="card-img-top" alt="Memories">
+                    <div class="card-body">
+                        <h5 class="card-title">Create Memories</h5>
+                        <p class="card-text">Share unforgettable moments, no matter where you are in the world.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer>
-        <div class="container" id="footer">
-            <h3>Download the App!</h3>
-            <p>Get the best experience by downloading our mobile application today.</p>
-            <p>
-                <a href="#"><img id="appicon" src="apple.png" alt="Download on App Store"></a>
-            </p>
+
+    <footer id="footer">
+        <div class="container">
+            <h3>Download the Friendship App!</h3>
+            <p>Stay close with your favorite people — anytime, anywhere.</p>
+            <a href="#"><img id="appicon" src="apple.png" alt="Download on App Store"></a>
+            <p class="text-center mt-3" style="opacity: 0.6;">© 2025 Developed by dhanaraj sb</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
